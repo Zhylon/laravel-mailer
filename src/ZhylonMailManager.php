@@ -10,14 +10,14 @@ class ZhylonMailManager extends MailManager
     /**
      * Create an instance of the Zhylon Transport driver.
      */
-    protected function createZhylonTransport(array $config): ZhylonApiTransport
+    protected function createZhylonMailTransport(array $config): ZhylonApiTransport
     {
         $factory = new ZhylonTransportFactory(null, $this->getHttpClient($config));
 
         return $factory->create(new Dsn(
-            scheme : 'zhylonmail+api',
+            scheme : 'zhylon-mail+api',
             host   : 'default',
-            user   : $config['token'] ?? $this->app['config']->get('services.zhylonmail.token'),
+            user   : $config['token'] ?? $this->app['config']->get('services.zhylon-mail.token'),
             options: isset($config['message_stream_id']) ? ['message_stream' => $config['message_stream_id']] : []
         ));
     }

@@ -163,6 +163,6 @@ class ZhylonApiTransport extends AbstractApiTransport
 
     public function __toString(): string
     {
-        return sprintf('zhylonmail+api://%s', $this->getEndpoint()).($this->messageStream ? '?message_stream='.$this->messageStream : '');
+        return sprintf('zhylon-mail+api://%s', $this->getEndpoint()).($this->messageStream ? '?message_stream='.$this->messageStream : '');
     }
 }

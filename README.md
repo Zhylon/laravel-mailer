@@ -22,9 +22,9 @@ composer require zhylon/laravel-mailer
 Configuration example for `config/mail.php`:
 
 ```php
-'zhylonmail' => [
-    'transport' => 'zhylonmail',
-    'message_stream_id' => env('ZHYLONMAIL_MESSAGE_STREAM_ID'),
+'zhylon-mail' => [
+    'transport' => 'zhylon-mail',
+    // 'message_stream_id' => env('ZHYLONMAIL_MESSAGE_STREAM_ID'),
     // 'client' => [
     //     'timeout' => 5,
     // ],
@@ -34,7 +34,7 @@ Configuration example for `config/mail.php`:
 Also you need to add the zhylon-mailer transport to your `config/services.php`:
 
 ```php
-'zhylonmail' => [
+'zhylon-mail' => [
         'token' => env('ZHYLONMAIL_TOKEN'),
     ],
 ```

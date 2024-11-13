@@ -15,7 +15,7 @@ class ZhylonTransportFactory extends AbstractTransportFactory
         $scheme = $dsn->getScheme();
         $user = $this->getUser($dsn);
 
-        if ('zhylonmail' === $scheme || 'zhylonmail+api' === $scheme) {
+        if ('zhylon-mail' === $scheme || 'zhylon-mail+api' === $scheme) {
             $host = 'default' === $dsn->getHost() ? null : $dsn->getHost();
             $port = $dsn->getPort();
 
@@ -32,11 +32,11 @@ class ZhylonTransportFactory extends AbstractTransportFactory
             return $transport;
         }
 
-        throw new UnsupportedSchemeException($dsn, 'zhylonmail', $this->getSupportedSchemes());
+        throw new UnsupportedSchemeException($dsn, 'zhylon-mail', $this->getSupportedSchemes());
     }
 
     protected function getSupportedSchemes(): array
     {
-        return ['zhylonmail', 'zhylonmail+api',];
+        return ['zhylon-mail', 'zhylon-mail+api',];
     }
 }
