@@ -19,7 +19,7 @@ use Symfony\Contracts\HttpClient\Exception\TransportExceptionInterface;
 
 class ZhylonApiTransport extends AbstractApiTransport
 {
-    private const HOST    = 'zhylonid.test';
+    private const HOST    = 'mailer.zhylon.net';
     private const PACKAGE = 'zhylon/laravel-mailer';
 
     private string $key;
